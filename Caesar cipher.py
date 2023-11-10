@@ -6,8 +6,14 @@ direction = input("Type 'encode' OR 'e' to encrypt, type 'decode' OR 'd' to decr
 password = input ( " Enter your Password " )
 iteration = int ( input ( " Enter Iteration value " ))
 result = ''
-for i in password :
-    length = alphabet.index(i)
-    length += iteration
-    result += alphabet[length]
+if direction == "encode" or direction == "e" :
+    for i in password :
+        length = alphabet.index(i)
+        length += iteration
+        result += alphabet[length]
+elif direction == "decode" or direction == "d" :
+     for i in password :
+        length = alphabet.index(i)
+        length -= iteration
+        result += alphabet[length]
 print ( result ) 
